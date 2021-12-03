@@ -1,0 +1,56 @@
+ <!DOCTYPE html>
+<html>
+ 
+ <head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<script src="{{ url_for('static', filename='js/search.js') }}"></script>
+
+<!--
+    changing this all to client-side
+    templating (jinja) is for server-side
+    client-side stuff, need something like angular
+-->
+
+</head> 
+
+<body>
+
+<h1>Search</h1>
+<hr>
+<h3>Make, model, body-type</h3>
+
+<form action="/search">
+  <label for="make">Choose a make:</label>
+  <select name="make" id="make" >
+  </select>
+  <br>
+  <label for="model">Choose a model:</label>
+  <select name="model" id="model" >
+  </select>  
+  <br>
+  <label for="type">Choose a body type:</label>
+  <select name="type" id="type">
+  </select>  
+  <br><br>
+    <hr>
+    <h3>Year range</h3>
+
+   <label for="min">Min year</label>
+   <input type="range" id="minrange" name="min" >
+
+   <input type="text" id="mintext" value="" disabled>        
+   <br>
+   <label for="max">Max year</label>
+   <input type="range" id="maxrange" name="max" >
+
+   <input type="text" id="maxtext" value="" disabled>   
+   <br>
+   <br>
+  <input type="submit" value="Submit">
+</form>
+
+<hr>
+
+</body>
+</html> 

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    {% if car %}
+        {% set car_id = car['id'] %}
+        {% set make = car['make'] %}
+        {% set model = car['model'] %}
+        {% set year = car['year'] %}
+        {% set type = car['body_type'] %}
+    {% else %}
+        {% set car_id = '' %}
+        {% set make = '' %}
+        {% set model = '' %}
+        {% set year = '' %}
+        {% set type = '' %}
+    {% endif %}
+
+</head>
+<body>
+<h2> Create / view / update a car</h2>
+
+<form method="POST">
+    <label for="car_id">ID:</label><br>
+    <input type="text" id="car_id" name="car_id" value="{{car_id}}"
+        {% if car %} disabled {% endif %}>
+    <br>
+    <label for="make">Make:</label><br>
+    <input type="text" id="make" name="make" value="{{make}}"><br>
+    <label for="model">Model:</label><br>
+    <input type="text" id="model" name="model" value="{{model}}"><br>
+    <label for="year">Year:</label><br>
+    <input type="text" id="year" name="year" value="{{year}}"><br>
+    <label for="type">Type:</label><br>
+    <input type="text" id="type" name="type" value="{{type}}"><br>
+    <input type="submit" value="submit">
+
+</form>
+</body>
+</html>

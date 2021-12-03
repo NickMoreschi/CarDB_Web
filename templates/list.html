@@ -1,0 +1,21 @@
+<h1> Cars </h1>
+
+<table>
+    {% if cars|length %}
+
+    {% for car in cars %}
+
+        <tr>
+            <td> {{car['id']}}</td>
+            <td> {{car['make']}}</td>
+            <td> {{car['model']}}</td>
+            <td> {{car['year']}}</td>
+            <td> {{car['type']}}</td>
+            <td> <a href="{{car['id']}}"> view/update </a></td>
+            <td> <a href="../delete/{{car['id']}}"> delete </a></td>
+        </tr>
+    {% endfor %}
+    {% else %}
+        No cars
+    {% endif %}
+</table>
